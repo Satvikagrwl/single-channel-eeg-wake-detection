@@ -1,0 +1,61 @@
+{
+    "experiment_id": "EXP003",
+    "experiment_name": "corrected_baseline",
+    "timestamp": "2026-09-26T02:46:36.304708",
+    "experiment": {
+        "subjects": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "n_subjects": 10,
+        "n_epochs": 27533,
+        "n_features": 6
+    },
+    "features": {
+        "representation": "Relative spectral bandpower",
+        "bands": {
+            "Delta": "0.5-4 Hz",
+            "Theta": "4-8 Hz",
+            "Alpha": "8-12 Hz",
+            "Sigma": "12-16 Hz",
+            "Beta": "16-30 Hz",
+            "Gamma": "30-40 Hz"
+        },
+        "welch_segment": "4 seconds",
+        "welch_overlap": "50%"
+    },
+    "classifier": {
+        "name": "Random Forest",
+        "n_estimators": 100,
+        "random_state": 42,
+        "n_jobs": -1
+    },
+    "validation": {
+        "method": "Leave-One-Subject-Out cross-validation",
+        "n_folds": 10
+    },
+    "results": {
+        "mean_fold_accuracy": 0.8735353977767228,
+        "std_fold_accuracy": 0.037454331190608356,
+        "pooled_accuracy": 0.8739694185159627,
+        "pooled_macro_f1": 0.6294913494275184,
+        "pooled_weighted_f1": 0.8694815614434774
+    },
+    "software_environment": {
+        "python": "3.14.6 (main, Jun 10 2026, 10:03:53) [Clang 21.0.0 (clang-2100.0.123.102)]",
+        "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+        "mne": "1.13.2",
+        "yasa": "0.7.0",
+        "scipy": "1.18.1",
+        "numpy": "2.5.3",
+        "scikit_learn": "1.9.1"
+    }
+}

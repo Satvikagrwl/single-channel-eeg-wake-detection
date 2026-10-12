@@ -1,0 +1,129 @@
+EXP006: operating_point_and_cost_analysis
+============================================================================
+
+============================================================================
+SCENARIO: baseline_0p50
+Family: baseline
+Parameter: 0.50
+Description: Fixed threshold 0.50
+
+              precision    recall  f1-score   support
+
+    Non-Wake       0.87      0.90      0.89      8449
+        Wake       0.96      0.94      0.95     19084
+
+    accuracy                           0.93     27533
+   macro avg       0.91      0.92      0.92     27533
+weighted avg       0.93      0.93      0.93     27533
+
+
+============================================================================
+SCENARIO: specificity_floor_85
+Family: specificity_constraint
+Parameter: 0.85
+Description: Nested threshold selected by maximizing Wake sensitivity subject to mean inner specificity >= 0.85
+
+              precision    recall  f1-score   support
+
+    Non-Wake       0.96      0.85      0.90      8449
+        Wake       0.93      0.98      0.96     19084
+
+    accuracy                           0.94     27533
+   macro avg       0.95      0.91      0.93     27533
+weighted avg       0.94      0.94      0.94     27533
+
+
+============================================================================
+SCENARIO: specificity_floor_90
+Family: specificity_constraint
+Parameter: 0.90
+Description: Nested threshold selected by maximizing Wake sensitivity subject to mean inner specificity >= 0.90
+
+              precision    recall  f1-score   support
+
+    Non-Wake       0.90      0.89      0.89      8449
+        Wake       0.95      0.95      0.95     19084
+
+    accuracy                           0.94     27533
+   macro avg       0.92      0.92      0.92     27533
+weighted avg       0.94      0.94      0.94     27533
+
+
+============================================================================
+SCENARIO: specificity_floor_95
+Family: specificity_constraint
+Parameter: 0.95
+Description: Nested threshold selected by maximizing Wake sensitivity subject to mean inner specificity >= 0.95
+
+              precision    recall  f1-score   support
+
+    Non-Wake       0.76      0.95      0.84      8449
+        Wake       0.97      0.87      0.92     19084
+
+    accuracy                           0.89     27533
+   macro avg       0.87      0.91      0.88     27533
+weighted avg       0.91      0.89      0.89     27533
+
+
+============================================================================
+SCENARIO: cost_ratio_1_to_1
+Family: cost_weighted
+Parameter: 1:1
+Description: Nested threshold selected by minimizing mean inner per-epoch cost where Wake FN cost = 1 and Non-Wake FP cost = 1
+
+              precision    recall  f1-score   support
+
+    Non-Wake       0.93      0.86      0.89      8449
+        Wake       0.94      0.97      0.96     19084
+
+    accuracy                           0.94     27533
+   macro avg       0.94      0.92      0.93     27533
+weighted avg       0.94      0.94      0.94     27533
+
+
+============================================================================
+SCENARIO: cost_ratio_2_to_1
+Family: cost_weighted
+Parameter: 2:1
+Description: Nested threshold selected by minimizing mean inner per-epoch cost where Wake FN cost = 2 and Non-Wake FP cost = 1
+
+              precision    recall  f1-score   support
+
+    Non-Wake       0.96      0.83      0.89      8449
+        Wake       0.93      0.99      0.96     19084
+
+    accuracy                           0.94     27533
+   macro avg       0.95      0.91      0.93     27533
+weighted avg       0.94      0.94      0.94     27533
+
+
+============================================================================
+SCENARIO: cost_ratio_5_to_1
+Family: cost_weighted
+Parameter: 5:1
+Description: Nested threshold selected by minimizing mean inner per-epoch cost where Wake FN cost = 5 and Non-Wake FP cost = 1
+
+              precision    recall  f1-score   support
+
+    Non-Wake       0.98      0.78      0.87      8449
+        Wake       0.91      0.99      0.95     19084
+
+    accuracy                           0.93     27533
+   macro avg       0.95      0.89      0.91     27533
+weighted avg       0.93      0.93      0.93     27533
+
+
+============================================================================
+SCENARIO: cost_ratio_10_to_1
+Family: cost_weighted
+Parameter: 10:1
+Description: Nested threshold selected by minimizing mean inner per-epoch cost where Wake FN cost = 10 and Non-Wake FP cost = 1
+
+              precision    recall  f1-score   support
+
+    Non-Wake       0.99      0.72      0.83      8449
+        Wake       0.89      1.00      0.94     19084
+
+    accuracy                           0.91     27533
+   macro avg       0.94      0.86      0.88     27533
+weighted avg       0.92      0.91      0.91     27533

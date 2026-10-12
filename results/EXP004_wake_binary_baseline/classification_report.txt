@@ -1,0 +1,35 @@
+EXP004: wake_binary_baseline
+======================================================================
+
+Task: Wake vs Non-Wake
+Positive class: Wake
+Baseline threshold: 0.50
+
+Mean fold accuracy: 0.929182
+Fold accuracy SD: 0.042168
+Pooled accuracy: 0.929394
+Pooled Wake sensitivity: 0.941102
+Pooled Wake miss rate: 0.058898
+Pooled Wake specificity: 0.902947
+Pooled Wake precision: 0.956337
+Pooled Wake F1: 0.948658
+Pooled Macro-F1: 0.917824
+Pooled ROC-AUC: 0.973851
+Pooled PR-AUC: 0.983768
+
+Classification Report
+======================================================================
+
+              precision    recall  f1-score   support
+
+    Non-Wake       0.87      0.90      0.89      8449
+        Wake       0.96      0.94      0.95     19084
+
+    accuracy                           0.93     27533
+   macro avg       0.91      0.92      0.92     27533
+weighted avg       0.93      0.93      0.93     27533
+
+
+Pooled Confusion Matrix
+[[ 7629   820]
+ [ 1124 17960]]

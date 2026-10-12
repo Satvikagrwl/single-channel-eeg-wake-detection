@@ -1,0 +1,94 @@
+{
+    "experiment_id": "EXP004",
+    "experiment_name": "wake_binary_baseline",
+    "timestamp": "2026-09-26T03:21:46.744276",
+    "hypothesis": "A six-feature single-channel frontal EEG representation can distinguish Wake from Non-Wake across previously unseen subjects under subject-independent LOSO validation.",
+    "primary_metric": "Wake sensitivity / recall",
+    "baseline_threshold": 0.5,
+    "experiment": {
+        "subjects": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "n_subjects": 10,
+        "n_epochs": 27533,
+        "n_features": 6,
+        "task": "Binary Wake vs Non-Wake",
+        "wake_label": 1,
+        "nonwake_label": 0
+    },
+    "original_labels": {
+        "0": "Awake(W)",
+        "1": "Light(N1)",
+        "2": "Moderate(N2)",
+        "3": "Deep(N3)",
+        "4": "REM(R)"
+    },
+    "features": {
+        "representation": "Relative spectral bandpower",
+        "bands": {
+            "Delta": "0.5-4 Hz",
+            "Theta": "4-8 Hz",
+            "Alpha": "8-12 Hz",
+            "Sigma": "12-16 Hz",
+            "Beta": "16-30 Hz",
+            "Gamma": "30-40 Hz"
+        },
+        "welch_segment": "4 seconds",
+        "welch_overlap": "50%"
+    },
+    "classifier": {
+        "name": "Random Forest",
+        "n_estimators": 100,
+        "random_state": 42,
+        "n_jobs": -1
+    },
+    "validation": {
+        "method": "Leave-One-Subject-Out cross-validation",
+        "n_folds": 10
+    },
+    "results": {
+        "mean_fold_accuracy": 0.9291822401667975,
+        "std_fold_accuracy": 0.042168458046221484,
+        "mean_fold_wake_sensitivity": 0.9436724555548175,
+        "std_fold_wake_sensitivity": 0.06780407071998365,
+        "mean_fold_specificity": 0.9099253938054769,
+        "mean_fold_balanced_accuracy": 0.9267989246801471,
+        "mean_fold_wake_precision": 0.9557422295789622,
+        "mean_fold_wake_f1": 0.9477732561501384,
+        "mean_fold_roc_auc": 0.9818109483957871,
+        "mean_fold_pr_auc": 0.9868933022218505,
+        "pooled_accuracy": 0.9293938183270984,
+        "pooled_balanced_accuracy": 0.9220247942833496,
+        "pooled_wake_precision": 0.9563365282215123,
+        "pooled_wake_sensitivity": 0.9411024942360092,
+        "pooled_wake_miss_rate": 0.058897505763990776,
+        "pooled_wake_specificity": 0.90294709433069,
+        "pooled_wake_f1": 0.9486583562222691,
+        "pooled_macro_f1": 0.9178241205596871,
+        "pooled_weighted_f1": 0.9297342682468827,
+        "pooled_roc_auc": 0.9738511270317108,
+        "pooled_pr_auc": 0.9837682553085044,
+        "true_negative": 7629,
+        "false_positive": 820,
+        "false_negative": 1124,
+        "true_positive": 17960
+    },
+    "software_environment": {
+        "python": "3.14.6 (main, Jun 10 2026, 10:03:53) [Clang 21.0.0 (clang-2100.0.123.102)]",
+        "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+        "mne": "1.13.2",
+        "yasa": "0.7.0",
+        "scipy": "1.18.1",
+        "numpy": "2.5.3",
+        "scikit_learn": "1.9.1"
+    }
+}

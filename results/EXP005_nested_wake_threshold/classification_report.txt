@@ -1,0 +1,80 @@
+EXP005: nested_wake_threshold
+============================================================================
+
+Task: Wake vs Non-Wake
+Positive class: Wake
+Baseline threshold: 0.50
+Specificity floor for nested selection: 0.90
+Threshold grid: 0.00 to 1.00 in 0.01 increments
+Outer validation: Leave-One-Subject-Out
+Inner threshold selection: Leave-One-Subject-Out over the 9 outer-training subjects
+
+BASELINE (fixed threshold 0.50)
+Mean fold accuracy: 0.929182
+Fold accuracy SD: 0.042168
+Pooled accuracy: 0.929394
+Pooled Wake sensitivity: 0.941102
+Pooled Wake miss rate: 0.058898
+Pooled Wake specificity: 0.902947
+Pooled Wake precision: 0.956337
+Pooled Wake F1: 0.948658
+Pooled Macro-F1: 0.917824
+Pooled Weighted-F1: 0.929734
+Pooled ROC-AUC: 0.973851
+Pooled PR-AUC: 0.983768
+
+NESTED THRESHOLD (fold-specific threshold selected without outer test labels)
+Mean selected threshold: 0.440000
+Selected threshold SD: 0.023094
+Mean fold accuracy: 0.935184
+Fold accuracy SD: 0.032396
+Pooled accuracy: 0.935423
+Pooled Wake sensitivity: 0.953731
+Pooled Wake miss rate: 0.046269
+Pooled Wake specificity: 0.894070
+Pooled Wake precision: 0.953132
+Pooled Wake F1: 0.953431
+Pooled Macro-F1: 0.924068
+Pooled Weighted-F1: 0.935410
+Pooled ROC-AUC: 0.973851
+Pooled PR-AUC: 0.983768
+
+PAIRED CHANGE (nested minus baseline)
+Wake sensitivity delta: +0.012628
+Wake miss rate delta: -0.012628
+Specificity delta: -0.008877
+Balanced accuracy delta: +0.001876
+
+BASELINE CLASSIFICATION REPORT
+============================================================================
+
+              precision    recall  f1-score   support
+
+    Non-Wake       0.87      0.90      0.89      8449
+        Wake       0.96      0.94      0.95     19084
+
+    accuracy                           0.93     27533
+   macro avg       0.91      0.92      0.92     27533
+weighted avg       0.93      0.93      0.93     27533
+
+
+NESTED THRESHOLD CLASSIFICATION REPORT
+============================================================================
+
+              precision    recall  f1-score   support
+
+    Non-Wake       0.90      0.89      0.89      8449
+        Wake       0.95      0.95      0.95     19084
+
+    accuracy                           0.94     27533
+   macro avg       0.92      0.92      0.92     27533
+weighted avg       0.94      0.94      0.94     27533
+
+
+BASELINE POOLED CONFUSION MATRIX
+[[ 7629   820]
+ [ 1124 17960]]
+
+NESTED THRESHOLD POOLED CONFUSION MATRIX
+[[ 7554   895]
+ [  883 18201]]

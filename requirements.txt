@@ -1,0 +1,7 @@
+# Python version used in the recorded experiment: 3.14.6
+numpy==2.5.3
+scipy==1.18.1
+scikit-learn==1.9.1
+mne==1.13.2
+yasa==0.7.0
+pandas==3.0.6

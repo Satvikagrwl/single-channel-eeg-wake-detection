@@ -1,0 +1,23 @@
+EXP003: corrected_baseline
+======================================================================
+
+Mean fold accuracy: 0.873535
+Fold accuracy SD: 0.037454
+Pooled accuracy: 0.873969
+Pooled Macro-F1: 0.629491
+Pooled Weighted-F1: 0.869482
+
+Classification Report
+======================================================================
+
+              precision    recall  f1-score   support
+
+    Awake(W)       0.95      0.96      0.96     19084
+   Light(N1)       0.30      0.16      0.21       771
+Moderate(N2)       0.79      0.83      0.81      4733
+    Deep(N3)       0.66      0.61      0.63      1269
+      REM(R)       0.53      0.54      0.54      1676
+
+    accuracy                           0.87     27533
+   macro avg       0.65      0.62      0.63     27533
+weighted avg       0.87      0.87      0.87     27533

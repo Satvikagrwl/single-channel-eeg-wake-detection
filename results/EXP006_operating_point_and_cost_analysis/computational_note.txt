@@ -1,0 +1,15 @@
+EXP006 Computational Characterization
+=====================================
+
+This analysis reports workstation-measured timing and serialized Random Forest model footprint. It is not a hardware benchmark and does not establish compatibility with any specific microcontroller or wearable device.
+
+Measurements:
+- total feature-extraction wall-clock time
+- outer-fold Random Forest training time
+- batch inference time on outer-test epochs
+- approximate single-epoch predict_proba time after warm-up
+- serialized model size
+- Random Forest tree-node counts
+
+Environment:
+macOS-26.6.2-arm64-arm-64bit-Mach-O
